@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# ChickenMaster
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 치킨을 먹고 싶지만, 어떤 치킨을 먹을지 고민 될 때 사용하는 웹 서비스<br/>
 
-## Available Scripts
+![image](https://github.com/MakeRobin97/49-3rd-OneMore-frontend/assets/127472621/46ac87bc-6042-4f36-a9e2-3b21fed680af)
 
-In the project directory, you can run:
+### 데모 영상
+[https://www.youtube.com/watch?v=-dnFsE2nu9c)](https://www.youtube.com/watch?v=TAxebfJnmi8)
 
-### `npm start`
+## ChickenMaster 프로젝트 Front-end 소개
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 20~40대 치킨을 먹고 싶지만 선택에 고민이 있는 사람들을 대상으로 서비스 기획
+- 간단한 서비스, 재미를 위주로 선택함
+- Redux를 활용해봄
+  
+### 개발 인원 및 기간
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 개발기간 : 2023/12/20 ~ 2023/12/31
+- 개발 인원 : 프론트엔드 1명(박인국)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## 적용 기술 및 구현 기능
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 적용 기술
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> - Front-End : React.js, Styled-componenets, Figma, Redux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### 구현 기능
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 공통
+##### 회원가입/ 로그인
+- 실시간 유효성 검사
+- 소셜 로그인(카카오, 구글, 네이버) 구현
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### 메인페이지
+- 오늘의 루틴 기능을 통해, 직관적으로 운동 추천
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##### 운동 실행 페이지
+- 유튜브 영상 재생
+- 운동 완료 후, 체크 박스로 체크 가능
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##### 루틴 만들기
+- 비구독 / 구독으로 운동 추천 구분
+- 무한 스크롤을 통해, 데이터를 효율적으로 받아옴
+- 필터를 통한 운동 검색 기능
 
-## Learn More
+##### 구독 결제
+- 카카오를 통해 결제 가능
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
