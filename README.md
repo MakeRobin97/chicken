@@ -2,7 +2,6 @@
 
 - 치킨을 먹고 싶지만, 어떤 치킨을 먹을지 고민 될 때 사용하는 웹 서비스<br/>
 
-![image](https://github.com/MakeRobin97/49-3rd-OneMore-frontend/assets/127472621/46ac87bc-6042-4f36-a9e2-3b21fed680af)
 
 ### 데모 영상
 [https://www.youtube.com/watch?v=-dnFsE2nu9c)](https://www.youtube.com/watch?v=TAxebfJnmi8)
