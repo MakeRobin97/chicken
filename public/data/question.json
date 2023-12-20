@@ -1,0 +1,35 @@
+{
+  "message": "SUCCESS",
+  "data": 
+     [{
+      "index":0,
+      "title":"어떤 맛을 선호하나요?",
+      "questionFirst":"후라이드 같은 오리지널 맛",
+      "questionSecond":"뿌링클 같은 강한 맛"
+     },
+      {
+        "index":1,
+        "title":"어떤 구성을 원하시나요?",
+        "questionFirst":"치킨만 있으면 돼",
+        "questionSecond":"감자튀김이나 떡볶이가 필요해"
+      },
+      {
+        "index":2,
+        "title":"어떤 방식을 원하시나요",
+        "questionFirst":"난 순살",
+        "questionSecond":"난 뼈닭"
+      },
+      {
+        "index":3,
+        "title":"치킨이 잘 물리는 타입인가요",
+        "questionFirst":"네!",
+        "questionSecond":"아뇨~ "
+      },
+      {
+        "index":4,
+        "title":"치킨 가격은 어떻게 생각하세요",
+        "questionFirst":"가성비가 좋은 곳으로 부탁해요",
+        "questionSecond":"법카라 상관없어요!"
+      }
+     ]
+}

@@ -11,7 +11,7 @@ const Router=()=> {
     <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/start/:id" element={<Start />} />
+            <Route path="/start" element={<Start />} />
             <Route path="/result" element={<Result />} />
           </Routes>
     </BrowserRouter>
