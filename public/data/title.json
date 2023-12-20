@@ -1,0 +1,8 @@
+{
+  "message": "SUCCESS",
+  "data": {
+    "title": "당신에게 어울리는 치킨은?",
+    "image": "/Images/chickenPic.png",
+    "backgroundColor": "#FFC436"
+  }
+}

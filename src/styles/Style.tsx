@@ -1,9 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
+import React, { ReactNode } from 'react';
 
+interface StyleProps {
+  children: ReactNode;
+}
 
-
-const Style=({ children })=> {
+const Style:React.FC<StyleProps> =({ children })=> {
   return <LayoutStyle>{children}</LayoutStyle>;
 }
 
