@@ -38,12 +38,22 @@ const Start=()=> {
 
   }
 
+
+
+
   // 질문 페이지 이동
-  const pageChange = () => {
-    if(questionResult[0]?.answer===undefined){
-      return
+  const pageChange = (parameter:number|undefined) => {
+  
+    if(parameter===undefined){
+      parameter=0;
     }
-    searchParams.set('q', String(question+2));
+
+    if(parameter===5) {
+      resultLogic();
+      return;
+    }
+
+    searchParams.set('q', String(parameter+1));
     setSearchParams(searchParams);
   }
 
@@ -70,61 +80,62 @@ const Start=()=> {
 
   //결과 조건문
   const resultLogic = () => {
-    if (data[0]?.title !== undefined && data.length === Number(question)) {
-      const binaryValue = (value:number) => (value === 0 ? '0' : '1');
-      const resultNumber = parseInt(
-        questionResult.map((result) => binaryValue(result.answer)).join(''),
-        2
-      );
-  
-      const resultMappings = [
-        '/result?r=1',
-        '/result?r=2',
-        '/result?r=3',
-        '/result?r=4',
-        '/result?r=5',
-        '/result?r=6',
-        '/result?r=7',
-        '/result?r=8',
-        '/result?r=9',
-        '/result?r=10',
-        '/result?r=11',
-        '/result?r=12',
-        '/result?r=13',
-        '/result?r=14',
-        '/result?r=15',
-        '/result?r=16',
-        '/result?r=17',
-        '/result?r=18',
-        '/result?r=19',
-        '/result?r=20',
-        '/result?r=21',
-        '/result?r=22',
-        '/result?r=23',
-        '/result?r=24',
-        '/result?r=25',
-        '/result?r=26',
-        '/result?r=27',
-        '/result?r=28',
-        '/result?r=29',
-        '/result?r=30',
-        '/result?r=31',
-        '/result?r=32',
-      ];
-  
-      if (resultMappings[resultNumber - 1]) {
-        navigate(resultMappings[resultNumber - 1]);
-      }
+    if((questionResult[0]?.testNumber!==undefined)&&questionResult.length===data.length){
+      
+      const q1 = questionResult[0].answer;
+      const q2 = questionResult[1].answer;
+      const q3 = questionResult[2].answer;
+      const q4 = questionResult[3].answer; 
+      const q5 = questionResult[4].answer;
+
+      if (q1 === 0 && q2 === 0 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=1'); }
+      if (q1 === 0 && q2 === 0 && q3 === 0 && q4 === 0 && q5 === 1) { navigate('/result?r=2'); }
+      if (q1 === 0 && q2 === 0 && q3 === 0 && q4 === 1 && q5 === 0) { navigate('/result?r=3'); }
+      if (q1 === 0 && q2 === 0 && q3 === 0 && q4 === 1 && q5 === 1) { navigate('/result?r=4'); }
+      if (q1 === 0 && q2 === 0 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=5'); }
+      if (q1 === 0 && q2 === 0 && q3 === 1 && q4 === 0 && q5 === 1) { navigate('/result?r=6'); }
+      if (q1 === 0 && q2 === 0 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=7'); }
+      if (q1 === 0 && q2 === 0 && q3 === 1 && q4 === 1 && q5 === 1) { navigate('/result?r=8'); }
+      if (q1 === 0 && q2 === 1 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=9'); }
+      if (q1 === 0 && q2 === 1 && q3 === 0 && q4 === 0 && q5 === 1) { navigate('/result?r=10'); }
+      if (q1 === 0 && q2 === 1 && q3 === 0 && q4 === 1 && q5 === 0) { navigate('/result?r=11'); }
+      if (q1 === 0 && q2 === 1 && q3 === 0 && q4 === 1 && q5 === 1) { navigate('/result?r=12'); }
+      if (q1 === 0 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=13'); }
+      if (q1 === 0 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 1) { navigate('/result?r=14'); }
+      if (q1 === 0 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=15'); }
+      if (q1 === 0 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 1) { navigate('/result?r=16'); }
+      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=17'); }
+      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 0 && q5 === 1) { navigate('/result?r=18'); }
+      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 1 && q5 === 0) { navigate('/result?r=19'); }
+      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 1 && q5 === 1) { navigate('/result?r=20'); }
+      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=21'); }
+      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 0 && q5 === 1) { navigate('/result?r=22'); }
+      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=23'); }
+      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 1 && q5 === 1) { navigate('/result?r=24'); }
+      if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=25'); }
+      if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 0 && q5 === 1) { navigate('/result?r=26'); }
+      if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 1 && q5 === 0) { navigate('/result?r=27'); }
+      if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 1 && q5 === 1) { navigate('/result?r=28'); }
+      if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=29'); }
+      if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 1) { navigate('/result?r=30'); }
+      if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=31'); }
+      if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 1) { navigate('/result?r=32'); }
     }
+
+   
   };
   //useEffect
     useEffect(() => {
+      if(questionResult.length!==question){
+        navigate('/')
+      }
       getQuestion();
     }, []);
 
     useEffect(()=> {
-      pageChange();
-    }, [searchParams])
+      resultLogic();
+    },[questionResult.length])
+
 
 
   return (
@@ -133,10 +144,10 @@ const Start=()=> {
     <ChoiceBox>
     <StartChoiceBtn  onClick={()=>{
       saveResult(data[question].index, 0);
-     }}> {data[question]?.questionFirst}</StartChoiceBtn>
+      pageChange(Number(data[question]?.index)+1)}}> {data[question]?.questionFirst}</StartChoiceBtn>
     <StartChoiceBtn  onClick={()=>{
       saveResult(data[question].index, 1);
-     }}> {data[question]?.questionSecond}</StartChoiceBtn>
+      pageChange(Number(data[question]?.index)+1)}}> {data[question]?.questionSecond}</StartChoiceBtn>
     </ChoiceBox>
     </StartStyle>
   );
