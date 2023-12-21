@@ -136,10 +136,11 @@ const Start=()=> {
       resultLogic();
     },[questionResult.length])
 
-
+    if (data[0]===undefined) return null;
 
   return (
     <StartStyle>
+      <Container>
     <Title>{data[question]?.title}</Title>
     <ChoiceBox>
     <StartChoiceBtn  onClick={()=>{
@@ -149,6 +150,7 @@ const Start=()=> {
       saveResult(data[question].index, 1);
       pageChange(Number(data[question]?.index)+1)}}> {data[question]?.questionSecond}</StartChoiceBtn>
     </ChoiceBox>
+    </Container>
     </StartStyle>
   );
 }
@@ -156,7 +158,20 @@ const Start=()=> {
 export default Start;
 
 const StartStyle = styled.div`
-  margin-top:100px;
+  margin-top:5%;
+  width:100vw;
+  height:100vh;
+  @media (max-width: 500px){
+    margin-top:20%;
+  }
+
+  @media (max-width: 360px){
+    margin-top:25%;
+  }
+`;
+
+const Container = styled.div`
+  margin:10px;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -166,17 +181,45 @@ const Title = styled.div`
   text-align: center;
   font-size:55px;
   font-weight:700;
+
+  @media (max-width: 1024px){
+    font-size:40px;
+
+  }
+
+  @media (max-width: 500px){
+    font-size:30px;
+  }
+
+  @media (max-width: 360px){
+    font-size:25px;
+
+  }
+
 `;
 
 const ChoiceBox = styled.div`
-  margin-top:60px;
-  width:550px;
+  margin-top:5%;
+  width: 500px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  @media (max-width: 500px){
+    margin-top:10%;
+    width:350px;
+  }
+
+  @media (max-width: 360px){
+    margin-top:15%;
+    width:250px;
+
+  }
 
 `;
 
 
 const StartChoiceBtn = styled.div`
-margin-top: 50px;
+margin-top: 10%;
 text-align: center;
 font-weight: 700;
 font-size: 30px;
@@ -188,5 +231,20 @@ cursor: pointer;
   &:hover {
     background-color: #FFD966;
   }
+  @media (max-width: 1024px){
+    font-size:30px;
+  }
+
+  @media (max-width: 500px){
+    width:300px;
+    font-size:25px;
+  }
+
+  @media (max-width: 360px){
+    width:250px;
+    font-size:20px;
+
+  }
+
 `;
 

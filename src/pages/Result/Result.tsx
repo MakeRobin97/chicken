@@ -1,11 +1,22 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 const Result = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const resultNumber = Number(searchParams.get("r")) ?? "0";
+
+
+	const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("링크가 복사되었어요.");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   let chickenName;
   let chickenImage;
@@ -172,8 +183,11 @@ const Result = () => {
     chickenImage = "/Images/푸라닭블랙알리오.png";
   }
 
+  const currentURL = 'https://makerobin97.github.io/';
+
   return (
     <ResultStyle>
+      <Container>
       <Title>당신과 어울리는 치킨은?</Title>
       <ResultName>{chickenName}</ResultName>
       <ResultInfo>{chickenInfo}</ResultInfo>
@@ -189,12 +203,13 @@ const Result = () => {
         </ResultBtn>
         <ResultBtn
           onClick={() => {
-            navigate("/");
+            handleCopyClipBoard(currentURL)
           }}
         >
           결과 공유하기
         </ResultBtn>
       </ChoiceBox>
+      </Container>
     </ResultStyle>
   );
 };
@@ -202,8 +217,23 @@ const Result = () => {
 export default Result;
 
 const ResultStyle = styled.div`
-  margin-top: 50px;
-  display: flex;
+  margin-top:2%;
+  width:100vw;
+  height:100vh;
+
+  @media (max-width: 500px){
+    margin-top:10%;
+  }
+
+  @media (max-width: 360px){
+    margin-top:15%;
+  }
+
+`;
+
+const Container = styled.div`
+  margin:10px;
+  display:flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -212,31 +242,81 @@ const Title = styled.div`
   text-align: center;
   font-size: 35px;
   font-weight: 500;
+
+  @media (max-width: 1024px){
+    font-size:30px;
+  }
+
+  @media (max-width: 500px){
+    font-size:25px;
+  }
+
+  @media (max-width: 360px){
+    font-size:20px;
+  }
+  
 `;
 
 const ResultName = styled.div`
-  margin-top: 50px;
+  margin-top: 2%;
   text-align: center;
   font-size: 45px;
   font-weight: 700;
+  @media (max-width: 1024px){
+    font-size:40px;
+  }
+
+  @media (max-width: 500px){
+    font-size:35px;
+  }
+
+  @media (max-width: 360px){
+    font-size:30px;
+  }
+
 `;
 
 const ResultInfo = styled.div`
-  margin-top: 30px;
+  margin-top: 3%;
   text-align: center;
   font-size: 25px;
   font-weight: 500;
+
+  @media (max-width: 360px){
+    font-size:14px;
+  }
+
 `;
 
 const ResultPic = styled.img`
   margin-top: 15px;
-  width: 500px;
+  width: 450px;
   height: 350px;
   object-fit: cover;
+  @media (max-width: 500px){
+    height:250px;
+    width:300px;
+  }
+  @media (max-width: 360px){
+    height:200px;
+    width:250px;
+
+  }
 `;
 
 const ChoiceBox = styled.div`
-  width: 550px;
+  width: 450px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  @media (max-width: 500px){
+    width:330px;
+  }
+
+  @media (max-width: 360px){
+    width:250px;
+
+  }
 `;
 
 const ResultBtn = styled.div`
@@ -251,5 +331,19 @@ const ResultBtn = styled.div`
   cursor: pointer;
   &:hover {
     background-color: #ffd966;
+  }
+  @media (max-width: 1024px){
+    font-size:30px;
+  }
+
+  @media (max-width: 500px){
+    width:300px;
+    font-size:25px;
+  }
+
+  @media (max-width: 360px){
+    width:250px;
+    font-size:20px;
+
   }
 `;
