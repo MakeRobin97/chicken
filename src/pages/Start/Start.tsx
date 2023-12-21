@@ -104,19 +104,19 @@ const Start=()=> {
       if (q1 === 0 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 1) { navigate('/result?r=14'); }
       if (q1 === 0 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=15'); }
       if (q1 === 0 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 1) { navigate('/result?r=16'); }
-      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=17'); }
+      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=17'); } // 60계치킨 크크크치킨
       if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 0 && q5 === 1) { navigate('/result?r=18'); }
-      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 1 && q5 === 0) { navigate('/result?r=19'); }
+      if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 1 && q5 === 0) { navigate('/result?r=19'); } // 60계치킨 하하핫치킨
       if (q1 === 1 && q2 === 0 && q3 === 0 && q4 === 1 && q5 === 1) { navigate('/result?r=20'); }
-      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=21'); }
+      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=21'); } // 60계치킨 크크크치킨
       if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 0 && q5 === 1) { navigate('/result?r=22'); }
-      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=23'); }
+      if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=23'); } // 60계치킨 하하핫치킨
       if (q1 === 1 && q2 === 0 && q3 === 1 && q4 === 1 && q5 === 1) { navigate('/result?r=24'); }
-      if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=25'); }
+      if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 0 && q5 === 0) { navigate('/result?r=25'); } // 60계치킨 간지치킨
       if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 0 && q5 === 1) { navigate('/result?r=26'); }
       if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 1 && q5 === 0) { navigate('/result?r=27'); }
       if (q1 === 1 && q2 === 1 && q3 === 0 && q4 === 1 && q5 === 1) { navigate('/result?r=28'); }
-      if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=29'); }
+      if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 0) { navigate('/result?r=29'); } // 60계치킨 간지치킨
       if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 0 && q5 === 1) { navigate('/result?r=30'); }
       if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 0) { navigate('/result?r=31'); }
       if (q1 === 1 && q2 === 1 && q3 === 1 && q4 === 1 && q5 === 1) { navigate('/result?r=32'); }
