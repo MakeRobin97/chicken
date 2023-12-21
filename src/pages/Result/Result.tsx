@@ -183,7 +183,7 @@ const Result = () => {
     chickenImage = "/Images/푸라닭블랙알리오.png";
   }
 
-  const currentURL = window.location.href;
+  const currentURL = 'https://makerobin97.github.io/';
 
   return (
     <ResultStyle>
@@ -305,7 +305,6 @@ const ResultPic = styled.img`
 `;
 
 const ChoiceBox = styled.div`
-  margin-top:2%;
   width: 450px;
   display:flex;
   flex-direction:column;

@@ -63,11 +63,11 @@ const MainStyle = styled.div`
   width:100vw;
   height:100vh;
   @media (max-width: 500px){
-    margin-top:10%;
+    margin-top:20%;
   }
 
   @media (max-width: 360px){
-    margin-top:15%;
+    margin-top:25%;
   }
 `;
 
@@ -134,7 +134,7 @@ cursor: pointer;
 
   @media (max-width: 360px){
     width:250px;
-    font-size:20px;
+    font-size:15px;
 
   }
 

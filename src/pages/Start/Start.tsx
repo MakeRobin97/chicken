@@ -162,11 +162,11 @@ const StartStyle = styled.div`
   width:100vw;
   height:100vh;
   @media (max-width: 500px){
-    margin-top:10%;
+    margin-top:20%;
   }
 
   @media (max-width: 360px){
-    margin-top:15%;
+    margin-top:25%;
   }
 `;
 
@@ -199,16 +199,18 @@ const Title = styled.div`
 `;
 
 const ChoiceBox = styled.div`
-  margin-top:2%;
+  margin-top:5%;
   width: 500px;
   display:flex;
   flex-direction:column;
   align-items: center;
   @media (max-width: 500px){
+    margin-top:10%;
     width:350px;
   }
 
   @media (max-width: 360px){
+    margin-top:15%;
     width:250px;
 
   }
