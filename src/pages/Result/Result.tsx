@@ -277,13 +277,13 @@ const ResultName = styled.div`
 `;
 
 const ResultInfo = styled.div`
-  margin-top: 2%;
+  margin-top: 3%;
   text-align: center;
   font-size: 25px;
   font-weight: 500;
 
   @media (max-width: 360px){
-    font-size:20px;
+    font-size:14px;
   }
 
 `;
