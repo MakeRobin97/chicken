@@ -1,22 +1,56 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
-const Result = () => {
+const Main=()=> {
+
   const navigate = useNavigate();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isResultImageLoaded, setIsResultImageLoaded] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const resultNumber = Number(searchParams.get("r")) ?? "0";
 
 
-	const handleCopyClipBoard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      alert("링크가 복사되었어요.");
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // useState
+  interface DataInterface {
+    title?: string;
+    image?: string;
+  }
+  const [data, setData] = useState<DataInterface>({});
+
+
+  // 질문 페이지 이동
+  const questionStart = () => {
+    navigate(`/start?q=1`)
+  }
+
+  //[백엔드 통신] 타이틀 GET
+  const getTitle = () => {
+    fetch(
+      `/data/title.json`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+      },
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(result => {
+        setData(result.data);
+      });
+  }
+
+  // 이미지 로딩 관리
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  }
+
+  const handleResultImageLoad = () => {
+    setIsResultImageLoaded(true);
+  }
 
   let chickenName;
   let chickenImage;
@@ -185,56 +219,42 @@ const Result = () => {
 
   const currentURL = window.location.href;
 
-  // 이미지 로딩 관리
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-  }
+  //useEffect
+  useEffect(() => {
+    getTitle();
+  }, []);
 
+  if (Object.keys(data).length === 0) return null;
 
   return (
-    <ResultStyle>
-      <Container>
-      <Title>당신과 어울리는 치킨은?</Title>
-      <ResultName>{chickenName}</ResultName>
-      <ResultInfo>{chickenInfo}</ResultInfo>
-  {isImageLoaded ? null : <ResultPicWaiting>결과 검색중</ResultPicWaiting>}
-      <ResultPic onLoad={handleImageLoad} src={chickenImage} alt="치킨사진" />
-      <ChoiceBox>
-        <ResultBtn
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          테스트 다시하기
-        </ResultBtn>
-        <ResultBtn
-          onClick={() => {
-            handleCopyClipBoard(currentURL)
-          }}
-        >
-          결과 공유하기
-        </ResultBtn>
-      </ChoiceBox>
-      </Container>
-    </ResultStyle>
+    <>
+
+    <MainStyle>
+    <Container>
+      <Title>{data.title}</Title>
+      {isImageLoaded? null : <MainPicWaiting>사진 불러오는 중..</MainPicWaiting> }
+      <MainPic  onLoad={handleImageLoad} src={`${data.image}`} alt="사진" />
+      <MainBtn   onClick={()=>{questionStart()}}> 확인 하러가기</MainBtn>
+    </Container>
+    </MainStyle>
+      
+    </>
   );
-};
+}
 
-export default Result;
+export default Main;
 
-const ResultStyle = styled.div`
-  margin-top:2%;
+const MainStyle = styled.div`
+  margin-top:5%;
   width:100vw;
   height:100vh;
-
   @media (max-width: 500px){
-    margin-top:10%;
+    margin-top:20%;
   }
 
   @media (max-width: 360px){
-    margin-top:15%;
+    margin-top:25%;
   }
-
 `;
 
 const Container = styled.div`
@@ -243,76 +263,27 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
 const Title = styled.div`
   text-align: center;
-  font-size: 35px;
-  font-weight: 500;
+  font-size:55px;
+  font-weight:700;
 
   @media (max-width: 1024px){
     font-size:30px;
   }
 
   @media (max-width: 500px){
-    font-size:25px;
+    font-size:30px;
   }
 
   @media (max-width: 360px){
     font-size:20px;
   }
-  
-`;
-
-const ResultName = styled.div`
-  margin-top: 2%;
-  text-align: center;
-  font-size: 45px;
-  font-weight: 700;
-  @media (max-width: 1024px){
-    font-size:40px;
-  }
-
-  @media (max-width: 500px){
-    font-size:35px;
-  }
-
-  @media (max-width: 360px){
-    font-size:30px;
-  }
 
 `;
 
-
-
-const ResultInfo = styled.div`
-  margin-top: 3%;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 500;
-
-  @media (max-width: 360px){
-    font-size:14px;
-  }
-
-`;
-
-const ResultPic = styled.img`
-  margin-top: 15px;
-  width: 450px;
-  height: 350px;
-  object-fit: cover;
-  @media (max-width: 500px){
-    height:250px;
-    width:300px;
-  }
-  @media (max-width: 360px){
-    height:200px;
-    width:250px;
-  }
-`;
-
-const ResultPicWaiting = styled.div`
-  margin-top: 15px;
+const MainPicWaiting = styled.div`
+ margin-top: 30px;
   width: 150px;
   height: 80px;
   display:flex;
@@ -320,38 +291,37 @@ const ResultPicWaiting = styled.div`
   align-items: center;
   border-radius: 5px;
   border: 1px solid black;
-  font-weight:700;
+    font-weight:700;
   background-color:#FFC436;
 `;
 
-const ChoiceBox = styled.div`
-  width: 450px;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  @media (max-width: 500px){
-    width:330px;
-  }
+const MainPic = styled.img`
+margin-top:15px;
+  width: 500px;
 
+  @media (max-width: 500px){
+    width:350px;
+  }
   @media (max-width: 360px){
     width:250px;
 
   }
 `;
 
-const ResultBtn = styled.div`
-  margin-top: 30px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 30px;
-  background-color: #ffc436;
-  width: 100%;
-  padding: 15px 0;
-  border-radius: 5px;
-  cursor: pointer;
+const MainBtn = styled.div`
+margin-top: 55px;
+text-align: center;
+font-weight: 700;
+font-size: 30px;
+background-color: #FFC436;
+width:400px;
+padding:15px 0;
+border-radius: 5px;
+cursor: pointer;
   &:hover {
-    background-color: #ffd966;
+    background-color: #FFD966;
   }
+
   @media (max-width: 1024px){
     font-size:30px;
   }
@@ -363,7 +333,8 @@ const ResultBtn = styled.div`
 
   @media (max-width: 360px){
     width:250px;
-    font-size:20px;
+    font-size:15px;
 
   }
+
 `;

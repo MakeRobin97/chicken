@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Main=()=> {
 
   const navigate = useNavigate();
-
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   // useState
   interface DataInterface {
     title?: string;
@@ -38,6 +38,11 @@ const Main=()=> {
       });
   }
 
+  // 이미지 로딩 관리
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  }
+
   //useEffect
   useEffect(() => {
     getTitle();
@@ -49,7 +54,8 @@ const Main=()=> {
     <MainStyle>
     <Container>
       <Title>{data.title}</Title>
-      <MainPic src={`${data.image}`} alt="사진" />
+      {isImageLoaded? null : <MainPicWaiting>사진 불러오는 중..</MainPicWaiting> }
+      <MainPic  onLoad={handleImageLoad} src={`${data.image}`} alt="사진" />
       <MainBtn   onClick={()=>{questionStart()}}> 확인 하러가기</MainBtn>
     </Container>
     </MainStyle>
@@ -94,6 +100,19 @@ const Title = styled.div`
     font-size:20px;
   }
 
+`;
+
+const MainPicWaiting = styled.div`
+ margin-top: 30px;
+  width: 150px;
+  height: 80px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid black;
+    font-weight:700;
+  background-color:#FFC436;
 `;
 
 const MainPic = styled.img`
