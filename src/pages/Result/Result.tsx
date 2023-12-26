@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
+
 
 const Result = () => {
   const navigate = useNavigate();
@@ -193,6 +195,13 @@ const Result = () => {
 
   return (
     <ResultStyle>
+
+<Helmet>
+<meta property="og:title" content={`나는 ${chickenName}`} />
+<meta property="og:description" content="hi there :) page one" />
+<meta property="og:image" content={chickenImage} /> 
+</Helmet>
+
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
       <ResultName>{chickenName}</ResultName>
