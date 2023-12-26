@@ -299,14 +299,14 @@ const ResultInfo = styled.div`
 const ResultPic = styled.img`
   margin-top: 15px;
   width: 450px;
-  height: 350px;
+
   object-fit: cover;
   @media (max-width: 500px){
-    height:250px;
+
     width:300px;
   }
   @media (max-width: 360px){
-    height:200px;
+
     width:250px;
   }
 `;
@@ -325,22 +325,22 @@ const ResultPicWaiting = styled.div`
 `;
 
 const ChoiceBox = styled.div`
+margin-top:3px;
   width: 450px;
   display:flex;
   flex-direction:column;
   align-items: center;
+  gap: 15px;
   @media (max-width: 500px){
     width:330px;
   }
 
   @media (max-width: 360px){
     width:250px;
-
   }
 `;
 
 const ResultBtn = styled.div`
-  margin-top: 30px;
   text-align: center;
   font-weight: 700;
   font-size: 30px;
