@@ -124,7 +124,6 @@ margin-top:15px;
   }
   @media (max-width: 360px){
     width:250px;
-
   }
 `;
 
