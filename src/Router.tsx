@@ -4,9 +4,11 @@ import Style from './styles/Style';
 import Main from './pages/Main/Main';
 import Start from './pages/Start/Start';
 import Result from './pages/Result/Result';
+import { HelmetProvider } from 'react-helmet-async';
 
 const Router=()=> {
   return (
+    <HelmetProvider>
     <Style>
     <BrowserRouter>
           <Routes>
@@ -16,6 +18,7 @@ const Router=()=> {
           </Routes>
     </BrowserRouter>
     </Style>
+    </HelmetProvider>
   );
 }
 
