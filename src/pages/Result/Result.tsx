@@ -198,7 +198,7 @@ const Result = () => {
 
 <Helmet>
 <meta property="og:title" content={`나는 ${chickenName}`} />
-<meta property="og:description" content="hi there :) page one" />
+<meta property="og:description" content="궁금하지? 너와 어울리는 치킨"/>
 <meta property="og:image" content={chickenImage} /> 
 </Helmet>
 

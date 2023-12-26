@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Main=()=> {
 
@@ -52,6 +53,13 @@ const Main=()=> {
 
   return (
     <MainStyle>
+      <Helmet>
+    <meta property="og:title" content="당신과 어울리는 치킨은?"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="/Images/chickenPic.png"/>
+    <meta property="og:description" content="궁금하지? 너와 어울리는 치킨"/>
+
+</Helmet>
     <Container>
       <Title>{data.title}</Title>
       {isImageLoaded? null : <MainPicWaiting>사진 불러오는 중..</MainPicWaiting> }
