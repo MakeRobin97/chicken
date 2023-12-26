@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import ProgressBar from 'components/ProgressBar';
+
 
 const Start=()=> {
   const navigate = useNavigate();
@@ -11,6 +13,9 @@ const Start=()=> {
   const [questionResult, setQuestionResult] = useState<QuestionResult[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const question = Number(searchParams.get('q'))-1 ?? '0';
+
+
+
 
   // useState
   interface DataInterface {
@@ -73,7 +78,6 @@ const Start=()=> {
         return response.json();
       })
       .then(result => {
-
         setData(result.data);
       });
   }
@@ -138,11 +142,19 @@ const Start=()=> {
       resultLogic();
     },[questionResult.length])
 
+    const questionPlus = question+1
+    const progressPercent = (100/(data.length))*questionPlus;
+    const adjustedProgress = progressPercent >= 99 ? 100 : progressPercent;
+
+
     if (data[0]===undefined) return null;
 
   return (
     <StartStyle>
       <Container>
+        <ProgressBarStyle>
+          <ProgressBar width={adjustedProgress}/>
+        </ProgressBarStyle>
     <Title>{data[question]?.title}</Title>
     <ChoiceBox>
     <StartChoiceBtn  onClick={()=>{
@@ -164,11 +176,11 @@ const StartStyle = styled.div`
   width:100vw;
   height:100vh;
   @media (max-width: 500px){
-    margin-top:20%;
+    margin-top:10%;
   }
 
   @media (max-width: 360px){
-    margin-top:25%;
+    margin-top:5%;
   }
 `;
 
@@ -179,7 +191,28 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const ProgressBarStyle = styled.div`
+  width:500px;
+
+  @media (max-width: 500px){
+    width:300px;
+  }
+
+  @media (max-width: 360px){
+    width:250px;
+
+
+  }
+
+`
+
+
+
+
+
+
 const Title = styled.div`
+  margin-top:25px;
   text-align: center;
   font-size:55px;
   font-weight:700;
@@ -190,6 +223,7 @@ const Title = styled.div`
   }
 
   @media (max-width: 500px){
+
     font-size:30px;
   }
 
