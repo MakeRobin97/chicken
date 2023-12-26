@@ -1,8 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
-
+import Meta from "components/Meta";
 
 const Result = () => {
   const navigate = useNavigate();
@@ -20,9 +19,9 @@ const Result = () => {
     }
   };
 
-  let chickenName;
-  let chickenImage;
-  let chickenInfo;
+  let chickenName = "치킨이름";
+  let chickenImage = "치킨설명";
+  let chickenInfo = "치킨이미지"
 
   if (resultNumber === 1) {
     chickenName = "굽네 고추바사삭 순살";
@@ -193,15 +192,11 @@ const Result = () => {
   }
 
 
+
   return (
+    <>
+    <Meta title={`나는 ${chickenName}`} image={chickenImage}/>
     <ResultStyle>
-
-<Helmet>
-<meta property="og:title" content={`나는 ${chickenName}`} />
-<meta property="og:description" content="궁금하지? 너와 어울리는 치킨"/>
-<meta property="og:image" content={chickenImage} /> 
-</Helmet>
-
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
       <ResultName>{chickenName}</ResultName>
@@ -226,6 +221,7 @@ const Result = () => {
       </ChoiceBox>
       </Container>
     </ResultStyle>
+    </>
   );
 };
 
