@@ -19,13 +19,3 @@ https://iridescent-heliotrope-f60435.netlify.app/
 - 개발 인원 : 프론트엔드 1명(박인국)
 
 
-<br>
-
-## 적용 기술 및 구현 기능
-
-### 적용 기술
-
-> - Front-End : React.js, Styled-componenets
-
-
-
