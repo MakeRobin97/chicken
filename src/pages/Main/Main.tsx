@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Meta from 'components/Meta';
+
 
 const Main=()=> {
 
@@ -52,14 +53,10 @@ const Main=()=> {
   if (Object.keys(data).length === 0) return null;
 
   return (
+    <>
+    <Meta title="당신과 어울리는 치킨은!?" image="/Images/chickenPic.png" />
     <MainStyle>
-      <Helmet>
-    <meta property="og:title" content="당신과 어울리는 치킨은?"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="/Images/chickenPic.png"/>
-    <meta property="og:description" content="궁금하지? 너와 어울리는 치킨"/>
 
-</Helmet>
     <Container>
       <Title>{data.title}</Title>
       {isImageLoaded? null : <MainPicWaiting>사진 불러오는 중..</MainPicWaiting> }
@@ -67,6 +64,7 @@ const Main=()=> {
       <MainBtn   onClick={()=>{questionStart()}}> 확인 하러가기</MainBtn>
     </Container>
     </MainStyle>
+    </>
   );
 }
 
