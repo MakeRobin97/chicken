@@ -193,7 +193,7 @@ const Result = () => {
 
   return (
     <>
-    <Meta title={`나는 ${chickenName}`} image={chickenImage}/>
+    <Meta title={String(resultNumber)} image={chickenImage}/>
     <ResultStyle>
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
