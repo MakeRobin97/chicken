@@ -20,8 +20,8 @@ const Result = () => {
   };
 
   let chickenName = "치킨이름";
-  let chickenImage = "치킨설명";
-  let chickenInfo = "/Images/굽네오리지널.png"
+  let chickenImage = "/Images/굽네오리지널.png";
+  let chickenInfo = "치킨이미지";
 
   if (resultNumber === 1) {
     chickenName = "굽네 고추바사삭 순살";
@@ -191,9 +191,19 @@ const Result = () => {
     setIsImageLoaded(true);
   }
 
+  let a = '강'
+  let b = '남'
+  let c = '수'
+
+  if(2+2===4){
+    a='박';
+  }
+
+  let abc = a+b+c;
+
   return (
     <>
-    <Meta title={String(resultNumber)} image={chickenImage}/>
+    <Meta title={abc} image={chickenImage}/>
     <ResultStyle>
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
