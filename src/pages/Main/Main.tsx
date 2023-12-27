@@ -52,15 +52,9 @@ const Main=()=> {
 
   if (Object.keys(data).length === 0) return null;
 
-  let a='박'
-  let b='인'
-  let c='국'
-  a='김'
-  let abc=a+b+c;
-
   return (
     <>
-    <Meta title={abc} image="/Images/chickenPic.png" />
+    <Meta title='당신과 어울리는 치킨은?' image="/Images/chickenPic.png" />
     <MainStyle>
 
     <Container>
