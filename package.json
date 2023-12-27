@@ -10,12 +10,13 @@
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
+    "global": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^2.0.4",
     "react-router-dom": "^6.21.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-snap": "^1.23.0",
     "styled-components": "^6.1.2",
     "typescript": "^4.9.5",
@@ -28,6 +29,10 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
+  "reactSnap": {
+    "include": [
+          "/", "/result"
+      ]},
   "eslintConfig": {
     "extends": [
       "react-app",
