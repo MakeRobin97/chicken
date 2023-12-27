@@ -10,7 +10,7 @@ interface MetaProps{
 const Meta = ({ title, image }: MetaProps) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const resultNumber = (searchParams.get("r")) ?? "0";
+  const resultNumber = (searchParams.get("r")) ?? "97";
 
   return (
     <Helmet>

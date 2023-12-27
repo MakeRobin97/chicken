@@ -51,7 +51,13 @@ const Main=()=> {
   }, []);
 
   if (Object.keys(data).length === 0) return null;
-  let abc='테스트'
+
+  let a='박'
+  let b='인'
+  let c='국'
+  a='김'
+  let abc=a+b+c;
+
   return (
     <>
     <Meta title={abc} image="/Images/chickenPic.png" />

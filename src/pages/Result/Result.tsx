@@ -7,7 +7,7 @@ const Result = () => {
   const navigate = useNavigate();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const resultNumber = Number(searchParams.get("r")) ?? "0";
+  const resultNumber = Number(searchParams.get("r")) ?? "1997";
 
 
 	const handleCopyClipBoard = async (text: string) => {
@@ -21,7 +21,7 @@ const Result = () => {
 
   let chickenName = "치킨이름";
   let chickenImage = "치킨설명";
-  let chickenInfo = "치킨이미지"
+  let chickenInfo = "/Images/굽네오리지널.png"
 
   if (resultNumber === 1) {
     chickenName = "굽네 고추바사삭 순살";
