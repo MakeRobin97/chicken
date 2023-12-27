@@ -208,7 +208,7 @@ const Result = () => {
 
   return (
     <>
-    <Meta title={match1} image={chickenImage}/>
+    <Meta title={currentUrl} image={chickenImage}/>
     <ResultStyle>
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
