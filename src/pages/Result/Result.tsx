@@ -201,9 +201,11 @@ const Result = () => {
 
   let abc = a+b+c;
 
+  let currentUrl = window.location.href;
+  let match = String(currentUrl.match(/r=(\d+)/));
   return (
     <>
-    <Meta title={abc} image={chickenImage}/>
+    <Meta title={match} image={chickenImage}/>
     <ResultStyle>
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
