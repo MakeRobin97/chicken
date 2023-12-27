@@ -201,7 +201,7 @@ const Result = () => {
 
   let abc = a+b+c;
 
-  let currentUrl =  document.URL;
+  let currentUrl =  location.href;
   let match = (currentUrl.match(/r=(\d+)/));
   let match1: string = match ? match[1]! : '';
   console.log(currentURL);
@@ -209,7 +209,7 @@ const Result = () => {
 
   return (
     <>
-    <Meta title={currentURL} image={currentUrl}/>
+    <Meta title={currentUrl} image={window.location.pathname}/>
     <ResultStyle>
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
