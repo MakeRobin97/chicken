@@ -51,10 +51,10 @@ const Main=()=> {
   }, []);
 
   if (Object.keys(data).length === 0) return null;
-
+  let abc='테스트'
   return (
     <>
-    <Meta title="당신과 어울리는 치킨은!?" image="/Images/chickenPic.png" />
+    <Meta title={abc} image="/Images/chickenPic.png" />
     <MainStyle>
 
     <Container>

@@ -31,8 +31,10 @@
   },
   "reactSnap": {
     "include": [
-          "/", "/result"
-      ]},
+      "/",
+      "/result"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

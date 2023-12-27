@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Meta from "components/Meta";
@@ -190,8 +190,6 @@ const Result = () => {
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   }
-
-
 
   return (
     <>
