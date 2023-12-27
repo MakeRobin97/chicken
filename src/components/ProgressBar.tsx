@@ -1,19 +1,14 @@
 import styled from 'styled-components';
 
-
 interface ProgressBarProps {
   width: number;
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ width }) => {
-
-
   return (
-
     <ProgressBarBackground>
       <ProgressBarInside width={width} />
     </ProgressBarBackground>
-
   );
 }
 
@@ -30,8 +25,8 @@ interface WidthInterface {
   width: number,
 }
 
-const ProgressBarInside = styled.div`
-  width: ${(props: WidthInterface) => props.width}%;
+const ProgressBarInside = styled.div<WidthInterface>`
+  width: ${(props) => props.width}%;
   height: 100%;
   background-color: #FFC436;
   border-radius: 8px;
