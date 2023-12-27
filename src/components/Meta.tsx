@@ -5,18 +5,13 @@ interface MetaProps{
   image:string
 }
 
-
-
 const Meta = ({ title, image }: MetaProps) => {
-
-  const [searchParams, setSearchParams] = useSearchParams();
-  const resultNumber = (searchParams.get("r")) ?? "97";
 
   return (
     <Helmet>
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:description" content={resultNumber} />
+      <meta property="og:description" content="궁금하지? 너를 위한 치킨" />
       <meta property="og:image" content={image} />
     </Helmet>
   );

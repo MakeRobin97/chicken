@@ -7,7 +7,7 @@ const Result = () => {
   const navigate = useNavigate();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const resultNumber = Number(searchParams.get("r")) ?? "1997";
+  const resultNumber = Number(searchParams.get("r")) ?? 0;
 
 
 	const handleCopyClipBoard = async (text: string) => {
@@ -19,170 +19,222 @@ const Result = () => {
     }
   };
 
-  let chickenName = "치킨이름";
-  let chickenImage = "/Images/굽네오리지널.png";
-  let chickenInfo = "치킨이미지";
+  // let chickenName = "치킨이름";
+  // let chickenImage = "/Images/굽네오리지널.png";
+  // let chickenInfo = "치킨설명";
 
-  if (resultNumber === 1) {
-    chickenName = "굽네 고추바사삭 순살";
-    chickenInfo = "매콤바삭";
-    chickenImage = "/Images/굽네고추바사삭.png";
+  // if (resultNumber === 1) {
+  //   chickenName = "굽네 고추바사삭 순살";
+  //   chickenInfo = "매콤바삭";
+  //   chickenImage = "/Images/굽네고추바사삭.png";
+  // }
+  // if (resultNumber === 2) {
+  //   chickenName = "굽네 고추바사삭 순살 곱빼기";
+  //   chickenInfo = "매콤바삭";
+  //   chickenImage = "/Images/굽네고추바사삭.png";
+  // }
+  // if (resultNumber === 3) {
+  //   chickenName = "굽네 오리지널 순살";
+  //   chickenInfo = "오븐구이 치킨의 원조";
+  //   chickenImage = "/Images/굽네오리지널.png";
+  // }
+  // if (resultNumber === 4) {
+  //   chickenName = "굽네 오리지널 순살+치트킹(콘치즈)";
+  //   chickenInfo = "만능 시즈닝과 세트!";
+  //   chickenImage = "/Images/굽네오지리널치트킹.png";
+  // }
+  // if (resultNumber === 5) {
+  //   chickenName = "굽네 고추바사삭";
+  //   chickenInfo = "매콤바삭";
+  //   chickenImage = "/Images/굽네고추바사삭.png";
+  // }
+  // if (resultNumber === 6) {
+  //   chickenName = "굽네 고추바사삭 곱빼기";
+  //   chickenInfo = "매콤바삭";
+  //   chickenImage = "/Images/굽네고추바사삭.png";
+  // }
+  // if (resultNumber === 7) {
+  //   chickenName = "굽네 오리지널";
+  //   chickenInfo = "오븐구이 치킨의 원조";
+  //   chickenImage = "/Images/굽네오리지널.png";
+  // }
+  // if (resultNumber === 8) {
+  //   chickenName = "굽네 오리지널+치트킹(콘치즈)";
+  //   chickenInfo = "만능 시즈닝과 세트!";
+  //   chickenImage = "/Images/굽네오리지널치트킹.png";
+  // }
+  // if (resultNumber === 9) {
+  //   chickenName = "굽네 볼케이노 순살";
+  //   chickenInfo = "중독성 있는 불맛";
+  //   chickenImage = "/Images/굽네볼케이노.png";
+  // }
+  // if (resultNumber === 10) {
+  //   chickenName = "굽네 볼케이노 순살";
+  //   chickenInfo = "중독성 있는 불맛";
+  //   chickenImage = "/Images/굽네볼케이노.png";
+  // }
+  // if (resultNumber === 11) {
+  //   chickenName = "굽네 갈비천왕 순살";
+  //   chickenInfo = "단짠단짠의 정석";
+  //   chickenImage = "/Images/굽네갈비천왕.png";
+  // }
+  // if (resultNumber === 12) {
+  //   chickenName = "굽네 갈비천왕 순살";
+  //   chickenInfo = "단짠단짠의 정석";
+  //   chickenImage = "/Images/굽네갈비천왕.png";
+  // }
+  // if (resultNumber === 13) {
+  //   chickenName = "굽네 불금치킨";
+  //   chickenInfo = "매콤한 양념소스에 버터갈릭 소스까지";
+  //   chickenImage = "/Images/굽네불금치킨.png";
+  // }
+  // if (resultNumber === 14) {
+  //   chickenName = "BBQ 자메이카 통다리구이";
+  //   chickenInfo = "통다리에 자메이카 저크소스!";
+  //   chickenImage = "/Images/BBQ자메이카통다리.png";
+  // }
+  // if (resultNumber === 15) {
+  //   chickenName = "굽네 갈비천왕";
+  //   chickenInfo = "단짠단짠의 정석";
+  //   chickenImage = "/Images/굽네갈비천왕.png";
+  // }
+  // if (resultNumber === 16) {
+  //   chickenName = "굽네 갈비천왕";
+  //   chickenInfo = "단짠단짠의 정석";
+  //   chickenImage = "/Images/굽네갈비천왕.png";
+  // }
+  // if (resultNumber === 17) {
+  //   chickenName = "BHC HOT 후라이드치킨 순살";
+  //   chickenInfo = "명불허전! 바삭함, 고소함 가득!";
+  //   chickenImage = "/Images/BHC핫후라이드.jpg";
+  // }
+  // if (resultNumber === 18) {
+  //   chickenName = "BBQ HOT황금올리브치킨 크리스피 순살";
+  //   chickenInfo = "겉은 바삭 육즙 가득";
+  //   chickenImage = "/Images/BBQ핫황금올리브치킨크리스피순살.png";
+  // }
+  // if (resultNumber === 19) {
+  //   chickenName = "BBQ 황금올리브치킨 순살";
+  //   chickenInfo = "겉은 바삭 육즙 가득";
+  //   chickenImage = "/Images/BBQ황금올리브치킨.png";
+  // }
+  // if (resultNumber === 20) {
+  //   chickenName = "BBQ 크런치 순살크래커";
+  //   chickenInfo = "황금올리브 닭다리살에, 바삭한 순살 치킨";
+  //   chickenImage = "/Images/BBQ크런치순살크래커.png";
+  // }
+  // if (resultNumber === 21) {
+  //   chickenName = "BHC HOT 후라이드치킨";
+  //   chickenInfo = "명불허전! 바삭함, 고소함 가득!";
+  //   chickenImage = "/Images/BHC핫후라이드.png";
+  // }
+  // if (resultNumber === 22) {
+  //   chickenName = "BBQ HOT황금올리브치킨 크리스피";
+  //   chickenInfo = "겉은 바삭 육즙 가득";
+  //   chickenImage = "/Images/BBQ핫황금올리브치킨크리스피순살.png";
+  // }
+  // if (resultNumber === 23) {
+  //   chickenName = "BBQ 황금올리브치킨";
+  //   chickenInfo = "겉은 바삭 육즙 가득";
+  //   chickenImage = "/Images/BBQ황금올리브치킨.png";
+  // }
+  // if (resultNumber === 24) {
+  //   chickenName = "BBQ 황금올리브치킨콤보";
+  //   chickenInfo = "닭다리, 윙, 봉으로 이루어진 후라이드의 대명사";
+  //   chickenImage = "/Images/BBQ황금올리브치킨콤보.png";
+  // }
+  // if (resultNumber === 25) {
+  //   chickenName = "BHC 레드킹 순살";
+  //   chickenInfo = "매콤달콤!";
+  //   chickenImage = "/Images/BHC레드킹순살.jpg";
+  // }
+  // if (resultNumber === 26) {
+  //   chickenName = "푸라닭 고추마요 순살";
+  //   chickenInfo = "단짠단짠! 숙성간장과 꿀의 황금비율";
+  //   chickenImage = "/Images/푸라닭고추마요.png";
+  // }
+  // if (resultNumber === 27) {
+  //   chickenName = "BHC 골드킹 순살";
+  //   chickenInfo = "계속 손이 갈 수 밖에 없는 마법의 치킨";
+  //   chickenImage = "/Images/BHC골드킹순살.png";
+  // }
+  // if (resultNumber === 28) {
+  //   chickenName = "푸라닭 블랙알리오 순살";
+  //   chickenInfo = "깊고 진한 간장과 고소하면서 담백한 마늘의 만남!";
+  //   chickenImage = "/Images/푸라닭블랙알리오.png";
+  // }
+  // if (resultNumber === 29) {
+  //   chickenName = "BHC 레드킹";
+  //   chickenInfo = "매콤달콤!";
+  //   chickenImage = "/Images/BHC레드킹.jpg";
+  // }
+  // if (resultNumber === 30) {
+  //   chickenName = "푸라닭 고추마요 순살";
+  //   chickenInfo = "단짠단짠! 숙성간장과 꿀의 황금비율";
+  //   chickenImage = "/Images/푸라닭고추마요.png";
+  // }
+  // if (resultNumber === 31) {
+  //   chickenName = "BHC 골드킹";
+  //   chickenInfo = "계속 손이 갈 수 밖에 없는 마법의 치킨";
+  //   chickenImage = "/Images/BHC골드킹.png";
+  // }
+  // if (resultNumber === 32) {
+  //   chickenName = "푸라닭 블랙알리오";
+  //   chickenInfo = "깊고 진한 간장과 고소하면서 담백한 마늘의 만남!";
+  //   chickenImage = "/Images/푸라닭블랙알리오.png";
+  // }
+
+
+  interface ChickenInfo {
+    [key: number]: {
+      name: string;
+      info: string;
+      image: string;
+    };
   }
-  if (resultNumber === 2) {
-    chickenName = "굽네 고추바사삭 순살 곱빼기";
-    chickenInfo = "매콤바삭";
-    chickenImage = "/Images/굽네고추바사삭.png";
-  }
-  if (resultNumber === 3) {
-    chickenName = "굽네 오리지널 순살";
-    chickenInfo = "오븐구이 치킨의 원조";
-    chickenImage = "/Images/굽네오리지널.png";
-  }
-  if (resultNumber === 4) {
-    chickenName = "굽네 오리지널 순살+치트킹(콘치즈)";
-    chickenInfo = "만능 시즈닝과 세트!";
-    chickenImage = "/Images/굽네오지리널치트킹.png";
-  }
-  if (resultNumber === 5) {
-    chickenName = "굽네 고추바사삭";
-    chickenInfo = "매콤바삭";
-    chickenImage = "/Images/굽네고추바사삭.png";
-  }
-  if (resultNumber === 6) {
-    chickenName = "굽네 고추바사삭 곱빼기";
-    chickenInfo = "매콤바삭";
-    chickenImage = "/Images/굽네고추바사삭.png";
-  }
-  if (resultNumber === 7) {
-    chickenName = "굽네 오리지널";
-    chickenInfo = "오븐구이 치킨의 원조";
-    chickenImage = "/Images/굽네오리지널.png";
-  }
-  if (resultNumber === 8) {
-    chickenName = "굽네 오리지널+치트킹(콘치즈)";
-    chickenInfo = "만능 시즈닝과 세트!";
-    chickenImage = "/Images/굽네오리지널치트킹.png";
-  }
-  if (resultNumber === 9) {
-    chickenName = "굽네 볼케이노 순살";
-    chickenInfo = "중독성 있는 불맛";
-    chickenImage = "/Images/굽네볼케이노.png";
-  }
-  if (resultNumber === 10) {
-    chickenName = "굽네 볼케이노 순살";
-    chickenInfo = "중독성 있는 불맛";
-    chickenImage = "/Images/굽네볼케이노.png";
-  }
-  if (resultNumber === 11) {
-    chickenName = "굽네 갈비천왕 순살";
-    chickenInfo = "단짠단짠의 정석";
-    chickenImage = "/Images/굽네갈비천왕.png";
-  }
-  if (resultNumber === 12) {
-    chickenName = "굽네 갈비천왕 순살";
-    chickenInfo = "단짠단짠의 정석";
-    chickenImage = "/Images/굽네갈비천왕.png";
-  }
-  if (resultNumber === 13) {
-    chickenName = "굽네 불금치킨";
-    chickenInfo = "매콤한 양념소스에 버터갈릭 소스까지";
-    chickenImage = "/Images/굽네불금치킨.png";
-  }
-  if (resultNumber === 14) {
-    chickenName = "BBQ 자메이카 통다리구이";
-    chickenInfo = "통다리에 자메이카 저크소스!";
-    chickenImage = "/Images/BBQ자메이카통다리.png";
-  }
-  if (resultNumber === 15) {
-    chickenName = "굽네 갈비천왕";
-    chickenInfo = "단짠단짠의 정석";
-    chickenImage = "/Images/굽네갈비천왕.png";
-  }
-  if (resultNumber === 16) {
-    chickenName = "굽네 갈비천왕";
-    chickenInfo = "단짠단짠의 정석";
-    chickenImage = "/Images/굽네갈비천왕.png";
-  }
-  if (resultNumber === 17) {
-    chickenName = "BHC HOT 후라이드치킨 순살";
-    chickenInfo = "명불허전! 바삭함, 고소함 가득!";
-    chickenImage = "/Images/BHC핫후라이드.jpg";
-  }
-  if (resultNumber === 18) {
-    chickenName = "BBQ HOT황금올리브치킨 크리스피 순살";
-    chickenInfo = "겉은 바삭 육즙 가득";
-    chickenImage = "/Images/BBQ핫황금올리브치킨크리스피순살.png";
-  }
-  if (resultNumber === 19) {
-    chickenName = "BBQ 황금올리브치킨 순살";
-    chickenInfo = "겉은 바삭 육즙 가득";
-    chickenImage = "/Images/BBQ황금올리브치킨.png";
-  }
-  if (resultNumber === 20) {
-    chickenName = "BBQ 크런치 순살크래커";
-    chickenInfo = "황금올리브 닭다리살에, 바삭한 순살 치킨";
-    chickenImage = "/Images/BBQ크런치순살크래커.png";
-  }
-  if (resultNumber === 21) {
-    chickenName = "BHC HOT 후라이드치킨";
-    chickenInfo = "명불허전! 바삭함, 고소함 가득!";
-    chickenImage = "/Images/BHC핫후라이드.png";
-  }
-  if (resultNumber === 22) {
-    chickenName = "BBQ HOT황금올리브치킨 크리스피";
-    chickenInfo = "겉은 바삭 육즙 가득";
-    chickenImage = "/Images/BBQ핫황금올리브치킨크리스피순살.png";
-  }
-  if (resultNumber === 23) {
-    chickenName = "BBQ 황금올리브치킨";
-    chickenInfo = "겉은 바삭 육즙 가득";
-    chickenImage = "/Images/BBQ황금올리브치킨.png";
-  }
-  if (resultNumber === 24) {
-    chickenName = "BBQ 황금올리브치킨콤보";
-    chickenInfo = "닭다리, 윙, 봉으로 이루어진 후라이드의 대명사";
-    chickenImage = "/Images/BBQ황금올리브치킨콤보.png";
-  }
-  if (resultNumber === 25) {
-    chickenName = "BHC 레드킹 순살";
-    chickenInfo = "매콤달콤!";
-    chickenImage = "/Images/BHC레드킹순살.jpg";
-  }
-  if (resultNumber === 26) {
-    chickenName = "푸라닭 고추마요 순살";
-    chickenInfo = "단짠단짠! 숙성간장과 꿀의 황금비율";
-    chickenImage = "/Images/푸라닭고추마요.png";
-  }
-  if (resultNumber === 27) {
-    chickenName = "BHC 골드킹 순살";
-    chickenInfo = "계속 손이 갈 수 밖에 없는 마법의 치킨";
-    chickenImage = "/Images/BHC골드킹순살.png";
-  }
-  if (resultNumber === 28) {
-    chickenName = "푸라닭 블랙알리오 순살";
-    chickenInfo = "깊고 진한 간장과 고소하면서 담백한 마늘의 만남!";
-    chickenImage = "/Images/푸라닭블랙알리오.png";
-  }
-  if (resultNumber === 29) {
-    chickenName = "BHC 레드킹";
-    chickenInfo = "매콤달콤!";
-    chickenImage = "/Images/BHC레드킹.jpg";
-  }
-  if (resultNumber === 30) {
-    chickenName = "푸라닭 고추마요 순살";
-    chickenInfo = "단짠단짠! 숙성간장과 꿀의 황금비율";
-    chickenImage = "/Images/푸라닭고추마요.png";
-  }
-  if (resultNumber === 31) {
-    chickenName = "BHC 골드킹";
-    chickenInfo = "계속 손이 갈 수 밖에 없는 마법의 치킨";
-    chickenImage = "/Images/BHC골드킹.png";
-  }
-  if (resultNumber === 32) {
-    chickenName = "푸라닭 블랙알리오";
-    chickenInfo = "깊고 진한 간장과 고소하면서 담백한 마늘의 만남!";
-    chickenImage = "/Images/푸라닭블랙알리오.png";
-  }
+
+  const chickenInfo: ChickenInfo = {
+    0: {name:"치킨 이름", info:"치킨설명", image: "/Images/굽네볼케이노.png"},
+    1: { name: "굽네 고추바사삭 순살", info: "매콤바삭", image: "/Images/굽네고추바사삭.png" },
+    2: { name: "굽네 고추바사삭 순살 곱빼기", info: "매콤바삭", image: "/Images/굽네고추바사삭.png" },
+    3: { name: "굽네 오리지널 순살", info: "오븐구이 치킨의 원조", image: "/Images/굽네오리지널.png" },
+    4: { name: "굽네 오리지널 순살+치트킹(콘치즈)", info: "만능 시즈닝과 세트!", image: "/Images/굽네오지리널치트킹.png" },
+    5: { name: "굽네 고추바사삭", info: "매콤바삭", image: "/Images/굽네고추바사삭.png" },
+    6: { name: "굽네 고추바사삭 곱빼기", info: "매콤바삭", image: "/Images/굽네고추바사삭.png" },
+    7: { name: "굽네 오리지널", info: "오븐구이 치킨의 원조", image: "/Images/굽네오리지널.png" },
+    8: { name: "굽네 오리지널+치트킹(콘치즈)", info: "만능 시즈닝과 세트!", image: "/Images/굽네오리지널치트킹.png" },
+    9: { name: "굽네 볼케이노 순살", info: "중독성 있는 불맛", image: "/Images/굽네볼케이노.png" },
+    10: { name: "굽네 볼케이노 순살", info: "중독성 있는 불맛", image: "/Images/굽네볼케이노.png" },
+    11: { name: "굽네 갈비천왕 순살", info: "단짠단짠의 정석", image: "/Images/굽네갈비천왕.png" },
+    12: { name: "굽네 갈비천왕 순살", info: "단짠단짠의 정석", image: "/Images/굽네갈비천왕.png" },
+    13: { name: "굽네 불금치킨", info: "매콤한 양념소스에 버터갈릭 소스까지", image: "/Images/굽네불금치킨.png" },
+    14: { name: "BBQ 자메이카 통다리구이", info: "통다리에 자메이카 저크소스!", image: "/Images/BBQ자메이카통다리.png" },
+    15: { name: "굽네 갈비천왕", info: "단짠단짠의 정석", image: "/Images/굽네갈비천왕.png" },
+    16: { name: "굽네 갈비천왕", info: "단짠단짠의 정석", image: "/Images/굽네갈비천왕.png" },
+    17: { name: "BHC HOT 후라이드치킨 순살", info: "명불허전! 바삭함, 고소함 가득!", image: "/Images/BHC핫후라이드.jpg" },
+    18: { name: "BBQ HOT황금올리브치킨 크리스피 순살", info: "겉은 바삭 육즙 가득", image: "/Images/BBQ핫황금올리브치킨크리스피순살.png" },
+    19: { name: "BBQ 황금올리브치킨 순살", info: "겉은 바삭 육즙 가득", image: "/Images/BBQ황금올리브치킨.png" },
+    20: { name: "BBQ 크런치 순살크래커", info: "황금올리브 닭다리살에, 바삭한 순살 치킨", image: "/Images/BBQ크런치순살크래커.png" },
+    21: { name: "BHC HOT 후라이드치킨", info: "명불허전! 바삭함, 고소함 가득!", image: "/Images/BHC핫후라이드.png" },
+    22: { name: "BBQ HOT황금올리브치킨 크리스피", info: "겉은 바삭 육즙 가득", image: "/Images/BBQ핫황금올리브치킨크리스피순살.png" },
+    23: { name: "BBQ 황금올리브치킨", info: "겉은 바삭 육즙 가득", image: "/Images/BBQ황금올리브치킨.png" },
+    24: { name: "BBQ 황금올리브치킨콤보", info: "닭다리, 윙, 봉으로 이루어진 후라이드의 대명사", image: "/Images/BBQ황금올리브치킨콤보.png" },
+    25: { name: "BHC 레드킹 순살", info: "매콤달콤!", image: "/Images/BHC레드킹순살.jpg" },
+    26: { name: "푸라닭 고추마요 순살", info: "단짠단짠! 숙성간장과 꿀의 황금비율", image: "/Images/푸라닭고추마요.png" },
+    27: { name: "BHC 골드킹 순살", info: "계속 손이 갈 수 밖에 없는 마법의 치킨", image: "/Images/BHC골드킹순살.png" },
+    28: { name: "푸라닭 블랙알리오 순살", info: "깊고 진한 간장과 고소하면서 담백한 마늘의 만남!", image: "/Images/푸라닭블랙알리오.png" },
+    29: { name: "BHC 레드킹", info: "매콤달콤!", image: "/Images/BHC레드킹.jpg" },
+    30: { name: "푸라닭 고추마요 순살", info: "단짠단짠! 숙성간장과 꿀의 황금비율", image: "/Images/푸라닭고추마요.png" },
+    31: { name: "BHC 골드킹", info: "계속 손이 갈 수 밖에 없는 마법의 치킨", image: "/Images/BHC골드킹.png" },
+    32: { name: "푸라닭 블랙알리오", info: "깊고 진한 간장과 고소하면서 담백한 마늘의 만남!", image: "/Images/푸라닭블랙알리오.png" }
+  };
+
+  const currentResult: { name: string; info: string; image: string } = chickenInfo[resultNumber] || {
+    name: "치킨 이름",
+    info: "치킨설명",
+    image: "/Images/굽네볼케이노.png",
+  };
+
 
   const currentURL = window.location.href;
 
@@ -191,32 +243,16 @@ const Result = () => {
     setIsImageLoaded(true);
   }
 
-  let a = '강'
-  let b = '남'
-  let c = '수'
-
-  if(2+2===4){
-    a='박';
-  }
-
-  let abc = a+b+c;
-
-  let currentUrl =  location.href;
-  let match = (currentUrl.match(/r=(\d+)/));
-  let match1: string = match ? match[1]! : '';
-  console.log(currentURL);
-  console.log(currentUrl);
-
   return (
     <>
-    <Meta title={currentUrl} image={window.location.pathname}/>
+    <Meta title={currentResult.name} image={currentResult.image}/>
     <ResultStyle>
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
-      <ResultName>{chickenName}</ResultName>
-      <ResultInfo>{chickenInfo}</ResultInfo>
+      <ResultName>{currentResult.name}</ResultName>
+      <ResultInfo>{currentResult.info}</ResultInfo>
   {isImageLoaded ? null : <ResultPicWaiting>결과 검색중</ResultPicWaiting>}
-      <ResultPic onLoad={handleImageLoad} src={chickenImage} alt="치킨사진" />
+      <ResultPic onLoad={handleImageLoad} src={currentResult.image} alt="치킨사진" />
       <ChoiceBox>
         <ResultBtn
           onClick={() => {
