@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams, useParams } from "react-router-dom";
 import Meta from "components/Meta";
 
 const Result = () => {
@@ -242,10 +242,13 @@ const Result = () => {
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   }
-
+const params = useParams();
+console.log(params);
+console.log(params.id);
+const id=params.id ?? '0'
   return (
     <>
-    <Meta title={currentResult.name} image={currentResult.image}/>
+    <Meta title={id} image={currentResult.image}/>
     <ResultStyle>
       <Container>
       <Title>당신과 어울리는 치킨은?</Title>
