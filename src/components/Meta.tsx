@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useNavigate, useSearchParams } from "react-router-dom";
+
 interface MetaProps{
   title:string,
   image:string
