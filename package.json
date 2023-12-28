@@ -32,7 +32,7 @@
   "reactSnap": {
     "include": [
       "/",
-      "/result/:id"
+      "/result"
     ]
   },
   "eslintConfig": {
