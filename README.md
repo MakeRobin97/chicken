@@ -1,6 +1,6 @@
 
 
-# 치킨 추천 사이트
+# 당신에게 어울리는 치킨은?
  ![image](https://github.com/MakeRobin97/chicken/assets/127472621/dcdc2be9-f496-4391-a342-aaf59dfa15dc)
 - 치킨을 먹고 싶지만, 어떤 치킨을 먹을지 고민 될 때 사용하는 웹 서비스<br/>
 
