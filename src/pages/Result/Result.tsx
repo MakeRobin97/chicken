@@ -81,7 +81,7 @@ const Result = () => {
     <Meta title={currentResult.name} image={currentResult.image}/>
     <ResultStyle>
       <Container>
-      <Title>당신과 어울리는 치킨은?</Title>
+      <Title>당신과 어울리는 <HighLight>치킨</HighLight>은?</Title>
       <ResultName>{currentResult.name}</ResultName>
       <ResultInfo>{currentResult.info}</ResultInfo>
   {isImageLoaded ? null : <ResultPicWaiting>결과 검색중</ResultPicWaiting>}
@@ -149,6 +149,10 @@ const Title = styled.div`
     font-size:20px;
   }
   
+`;
+
+const HighLight = styled.span`
+  color:#FE7A36;
 `;
 
 const ResultName = styled.div`
