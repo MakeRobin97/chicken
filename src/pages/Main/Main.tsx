@@ -54,11 +54,13 @@ const Main=()=> {
 
   return (
     <>
+    <MainBack/>
     <Meta title='당신과 어울리는 치킨은?' image="/Images/chickenPic.png" />
     <MainStyle>
 
     <Container>
-      <Title>{data.title}</Title>
+      {/* <Title>{data.title}</Title> */}
+      <Title>당신에게 어울리는 <HighLight>치킨</HighLight>은?</Title>
       {isImageLoaded? null : <MainPicWaiting>사진 불러오는 중..</MainPicWaiting> }
       <MainPic  onLoad={handleImageLoad} src={`${data.image}`} alt="사진" />
       <MainBtn   onClick={()=>{questionStart()}}> 확인 하러가기</MainBtn>
@@ -69,6 +71,18 @@ const Main=()=> {
 }
 
 export default Main;
+
+const MainBack = styled.div`
+  width:100vw;
+  height:100vh;
+  object-fit: cover;
+  position: absolute;
+  top:0;
+  z-index:-1
+`
+const HighLight = styled.span`
+  color:#FE7A36;
+`;
 
 const MainStyle = styled.div`
   margin-top:5%;
